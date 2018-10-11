@@ -1,5 +1,5 @@
 {
-  "name": "Himalayan Camping Grounds",
+  "name": "HimalayanCampingGrounds",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,6 +9,7 @@
   "author": "Manish Kumar Sharma",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.4"
   }
