@@ -48,9 +48,12 @@ app.post('/campgrounds', (req,res) =>{
 		name,
 		image
 	};
-	campgrounds.push(newCampground);
-
-	res.redirect('/campgrounds');
+	Campground.create(newCampground, (err,newCampground) =>{
+		if(err)
+			console.error(err);
+		else
+			res.redirect('/campgrounds');
+	});
 
 });
 
