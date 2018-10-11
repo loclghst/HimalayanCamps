@@ -11,3 +11,9 @@ Each Campground has:
 #Layout and Basic Styling
 * Create our header and footer partials
 * Add in Bootstrap
+
+#Creating New Campgrounds
+* Setup new campground POST route
+* Add in body-parser
+* Setup route to show form
+* Add basic unstyled form
