@@ -14,7 +14,8 @@ app.set('view engine', 'ejs');
 
 const campgroundSchema = new mongoose.Schema({
 	name: String,
-	image: String
+	image: String,
+	description: String
 });
 
 const Campground = mongoose.model('Campground', campgroundSchema);
@@ -30,16 +31,13 @@ app.get("/campgrounds", (req, res)=>{
 		if(err)
 			console.error(err);
 		else{
-			res.render("campgrounds",{campgrounds:allcampgrounds});
+			res.render("index",{campgrounds:allcampgrounds});
 		}
 
 	});
 		
 });
 
-app.get('/campgrounds/new', (req,res) =>{
-	res.render('new.ejs');
-});
 
 app.post('/campgrounds', (req,res) =>{
 	let name = req.body.name;
@@ -57,6 +55,30 @@ app.post('/campgrounds', (req,res) =>{
 
 });
 
+//Show form to create a new campground
+app.get('/campgrounds/new', (req,res) =>{
+	res.render('new.ejs');
+});
+
+//this route shoud be after '/campgrounds/new'
+
+//Shows more info about one campground
+app.get('/campgrounds/:id', (req,res) =>{
+	//find the campground with provided id
+	Campground.findById(req.params.id, (err,foundCampground) =>{
+		if(err)
+			console.error(err);
+		else{
+			//render show template with that campground
+			res.render('show',{campground: foundCampground} );
+		}
+	});
+
+
+});
+
+
+
 app.listen(9999, process.env.IP, function(){
 	console.log('Server has started');
-})
+});
