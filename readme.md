@@ -46,3 +46,9 @@ Each Campground has:
 * Add a seeds.js file
 * Run the seeds file every time the server starts
 
+#Add the Comment model!
+* Make our errors go away!
+* Display comments on campground show page
+
+
+
