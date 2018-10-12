@@ -47,8 +47,15 @@ Each Campground has:
 * Run the seeds file every time the server starts
 
 #Add the Comment model!
-* Make our errors go away!
+* Make the errors go away!
 * Display comments on campground show page
+
+
+#Comment New/Create
+* Add nested routes
+* Add the comment new and create routes
+* Add the new comment form
+
 
 
 

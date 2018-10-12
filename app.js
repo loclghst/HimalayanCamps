@@ -65,7 +65,6 @@ app.get('/campgrounds/:id', (req,res) =>{
 		if(err)
 			console.error(err);
 		else{
-			console.log(foundCampground);
 			//render show template with that campground
 			res.render('campgrounds/show',{campground: foundCampground} );
 		}
@@ -76,9 +75,9 @@ app.get('/campgrounds/:id', (req,res) =>{
 
 //Comments routes
 
-app.get("/campgrounds/:id/comments/new", function(req, res){
+app.get("/campgrounds/:id/comments/new", (req, res) =>{
     // find campground by id
-    Campground.findById(req.params.id, function(err, campground){
+    Campground.findById(req.params.id,(err, campground) =>{
         if(err){
             console.log(err);
         } else {
