@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 const Campground = require('./models/campgrounds');
 const seedDB = require('./seeds');
 const Comment = require('./models/comment');
+const passport = require('passport');
+const LocalStrately = require('passport-local');
+const User = require('./models/user');
 
 
 
