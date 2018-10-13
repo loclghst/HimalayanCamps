@@ -119,5 +119,24 @@ Each Campground has:
 * Add Destroy route
 * Add Delete button
 
+#Authorization Part 2: Comments
+* User can only edit his/her comments
+* User can only delete his/her comments
+* Hide/Show edit and delete buttons
+* Refactor Middleware
+
+
+* BOOTSTRAP NAV COLLPASE JS
+* Flash Messages
+* Refactor container div to header
+* Show/hide delete and update buttons
+* style login/register forms
+* Random Background Landing Page
+* Refactor middleware
+* change styling in show template - comment delete/update
+* UPDATE/DELETE CAMPGROUND
+
+
+
 
 
