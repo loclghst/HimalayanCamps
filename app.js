@@ -8,6 +8,7 @@ const Comment = require('./models/comment');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
+const methodOverride = require('method-override');
 
 //requiring routes
 
@@ -23,7 +24,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + "/public"));
-
+app.use(methodOverride('_method'));
 //seedDB(); //seed the db
 
 
