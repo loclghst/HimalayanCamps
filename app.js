@@ -35,6 +35,10 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use(function(req, res, next){
+   res.locals.currentUser = req.user;
+   next();
+});
 
 
 app.get('/', (req,res) =>{
@@ -97,7 +101,7 @@ app.get('/campgrounds/:id', (req,res) =>{
 
 //Comments routes
 
-app.get("/campgrounds/:id/comments/new", (req, res) =>{
+app.get("/campgrounds/:id/comments/new", isLoggedIn, (req, res) =>{
     // find campground by id
     Campground.findById(req.params.id,(err, campground) =>{
         if(err){
@@ -109,7 +113,7 @@ app.get("/campgrounds/:id/comments/new", (req, res) =>{
 });
 
 //POST Route for adding comments to the db
-app.post("/campgrounds/:id/comments", function(req, res){
+app.post("/campgrounds/:id/comments", isLoggedIn, function(req, res){
    //lookup campground using ID
    Campground.findById(req.params.id, function(err, campground){
        if(err){
