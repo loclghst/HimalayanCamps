@@ -85,5 +85,10 @@ Each Campground has:
 * Use Express router to reoragnize all routes
 
 
+##Users + Comments
+* Associate users and comments
+* Save author's name to a comment automatically
+
+
 
 
