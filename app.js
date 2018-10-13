@@ -18,8 +18,8 @@ const campgroundRoutes = require('./routes/campgrounds');
 const indexRoutes = require('./routes/index');
 
 
-mongoose.connect('mongodb://localhost/yelp_camp',{useNewUrlParser: true});
-
+// mongoose.connect('mongodb://localhost/yelp_camp',{useNewUrlParser: true});
+mongoose.connect('mongodb://himalayancamps:camps123@ds131743.mlab.com:31743/himalayan_camps',{useNewUrlParser:true});
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -57,6 +57,6 @@ app.use('/campgrounds/:id/comments',commentRoutes);
 
 
 
-app.listen(9999, process.env.IP, function(){
+app.listen(process.env.PORT, process.env.IP, function(){
 	console.log('Server has started');
 });
