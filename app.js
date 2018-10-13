@@ -6,7 +6,7 @@ const Campground = require('./models/campgrounds');
 const seedDB = require('./seeds');
 const Comment = require('./models/comment');
 const passport = require('passport');
-const LocalStrately = require('passport-local');
+const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 
 
@@ -151,6 +151,19 @@ app.post("/register", function(req, res){
         });
     });
 });
+
+// show login form
+app.get("/login", function(req, res){
+   res.render("login"); 
+});
+// handling login logic
+app.post("/login", passport.authenticate("local", 
+    {
+        successRedirect: "/campgrounds",
+        failureRedirect: "/login"
+    }), function(req, res){
+});
+
  
 
 
