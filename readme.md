@@ -1,4 +1,5 @@
 #Himalayan CampGrounds
+* The workflow of how the site is created.
 
 ##Initial Setup
 * Add Landing Page
